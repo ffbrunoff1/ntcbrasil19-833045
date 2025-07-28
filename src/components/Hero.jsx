@@ -1,11 +1,9 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
-
 export default function Hero() {
   const heroImageUrl =
     'https://images.pexels.com/photos/1267696/pexels-photo-1267696.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=2';
-
   const containerVariants = {
     hidden: { opacity: 0 },
     visible: {
@@ -16,7 +14,6 @@ export default function Hero() {
       },
     },
   };
-
   const itemVariants = {
     hidden: { y: 20, opacity: 0 },
     visible: {
@@ -25,7 +22,14 @@ export default function Hero() {
       transition: { duration: 0.6, ease: 'easeOut' },
     },
   };
-
+  const imageVariants = {
+    hidden: { scale: 0.8, opacity: 0 },
+    visible: {
+      scale: 1,
+      opacity: 1,
+      transition: { duration: 0.8, ease: [0.16, 1, 0.3, 1] },
+    },
+  };
   return (
     <section
       id="home"
@@ -44,8 +48,7 @@ export default function Hero() {
               variants={itemVariants}
               className="text-4xl md:text-6xl font-extrabold text-dark-text leading-tight mb-4"
             >
-              Construindo o Futuro com{' '}
-              <span className="gradient-text">Excelência.</span>
+              Drenagem com <span className="gradient-text">Excelência.</span>
             </motion.h1>
             <motion.p
               variants={itemVariants}
@@ -64,17 +67,12 @@ export default function Hero() {
               </a>
             </motion.div>
           </div>
-          <motion.div
-            className="relative"
-            initial={{ opacity: 0, scale: 0.8 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.8, delay: 0.5, ease: [0.16, 1, 0.3, 1] }}
-          >
+          <motion.div className="relative" variants={imageVariants}>
             <div className="absolute -inset-2 bg-gradient-to-br from-primary to-secondary rounded-2xl blur-xl opacity-30"></div>
             <motion.img
               src={heroImageUrl}
               alt="Arquitetura moderna"
-              className="relative w-full h-auto rounded-2xl shadow-2xl object-cover"
+              className="relative z-10 w-full h-auto rounded-2xl shadow-2xl object-cover"
               style={{ maxHeight: '500px' }}
               whileHover={{ scale: 1.05 }}
               transition={{ duration: 0.3 }}

@@ -1,17 +1,14 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-
 export default function Footer() {
   const logoUrl =
     'https://qotdwocbcoirjlqjkjhq.supabase.co/storage/v1/object/public/imagens.website.creation/ad5c31a2-f045-4f97-a0ab-2d4f0e6a69e7/logo_1753723696340_0.png';
-
   const navLinks = [
     { name: 'Início', href: '#home' },
     { name: 'Sobre Nós', href: '#about' },
     { name: 'Abordagem', href: '#services' },
     { name: 'Contato', href: '#contact' },
   ];
-
   const footerVariants = {
     hidden: { opacity: 0, y: 50 },
     visible: {
@@ -20,7 +17,6 @@ export default function Footer() {
       transition: { duration: 0.8, ease: 'easeOut' },
     },
   };
-
   return (
     <motion.footer
       className="bg-dark-text text-white"
@@ -40,11 +36,9 @@ export default function Footer() {
               />
             </a>
             <p className="text-gray-400 max-w-xs">
-              Construindo o futuro com a solidez e a confiança que seu projeto
-              merece.
+              Drenagem com a solidez e a confiança que seu projeto merece.
             </p>
           </div>
-
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold text-white mb-4">Navegação</h3>
             <ul className="space-y-3">
@@ -60,7 +54,6 @@ export default function Footer() {
               ))}
             </ul>
           </div>
-
           <div className="md:col-span-1">
             <h3 className="text-lg font-semibold text-white mb-4">
               Fale Conosco
@@ -88,7 +81,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
         <div className="mt-12 pt-8 border-t border-gray-700 text-center text-gray-400 text-sm">
           <p>
             &copy; {new Date().getFullYear()} NTC Brasil. Todos os direitos
